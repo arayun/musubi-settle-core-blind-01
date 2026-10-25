@@ -1,0 +1,33 @@
+{
+  "cases": [
+    {
+      "elapsed_seconds": 0.016127,
+      "error": null,
+      "id": "b01",
+      "inputs": {
+        "inputs/b01/contract.json": "f179f8a826b66c7dad5501e6802219c591b759b26300284761b983a224219d8e",
+        "inputs/b01/events/e00.json": "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5",
+        "inputs/b01/events/e01.json": "26510101c9b10b989484cc2debde3b119a483a809a63b8c40f33107b5d5a2e43",
+        "inputs/b01/view.json": "914b643c4022da303634c896b860a11bc8ff1395cde0da2b7ff2a557d50fae7f"
+      },
+      "output_sha256": "33442bec6e4d730a6df64629460fe7ddef45fc834c01a06c61cc8e39013d02f5",
+      "success": true,
+      "trace": {
+        "contract_door": true,
+        "deviations_before_verdict": [],
+        "kept_after_conformance": [
+          "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5",
+          "26510101c9b10b989484cc2debde3b119a483a809a63b8c40f33107b5d5a2e43"
+        ]
+      }
+    }
+  ],
+  "checked_input_files": 178,
+  "cryptography": "50.0.2",
+  "finished_utc": "2026-10-25T05:07:55.880131+00:00",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "runtime": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "spec_sha256": "3382374416254f85eec0c4f03699161748db5999794e75b68a00e7a4b7cf27c2",
+  "started_utc": "2026-10-25T05:07:55.856611+00:00",
+  "success_count": 1
+}

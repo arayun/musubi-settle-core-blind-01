@@ -1,0 +1,483 @@
+{
+  "checks": [
+    {
+      "check": "RFC8032 test 1 verifies",
+      "pass": true
+    },
+    {
+      "check": "RFC8032 test 1 strict",
+      "pass": true
+    },
+    {
+      "check": "wrong message rejected",
+      "pass": true
+    },
+    {
+      "check": "identity point rejected",
+      "pass": true
+    },
+    {
+      "check": "zero small-order point rejected",
+      "pass": true
+    },
+    {
+      "check": "noncanonical point rejected",
+      "pass": true
+    },
+    {
+      "check": "S plus L rejected",
+      "pass": true
+    },
+    {
+      "check": "noncanonical base64 rejected",
+      "pass": true
+    },
+    {
+      "check": "strict bool distinguished from int",
+      "pass": true
+    },
+    {
+      "check": "float tokens remain non-strict",
+      "pass": true
+    },
+    {
+      "check": "unsafe integer non-strict",
+      "pass": true
+    },
+    {
+      "check": "NaN read not parse error",
+      "pass": true
+    },
+    {
+      "check": "surrogate canonicalization",
+      "pass": true
+    },
+    {
+      "check": "duplicate key parse rejected",
+      "pass": true
+    },
+    {
+      "check": "too deep parse rejected",
+      "pass": true
+    },
+    {
+      "check": "bad infinity parse rejected",
+      "pass": true
+    },
+    {
+      "check": "b01 independently derived verdict",
+      "pass": true
+    },
+    {
+      "check": "b01 two accepted events",
+      "pass": true
+    },
+    {
+      "check": "b01 execution precedes revocation",
+      "pass": true
+    },
+    {
+      "check": "synthetic allow_unscoped control door accepts",
+      "pass": true
+    },
+    {
+      "check": "4.2 runs for accepted door",
+      "pass": true
+    },
+    {
+      "check": "synthetic rejected control door refuses",
+      "pass": true
+    },
+    {
+      "check": "4.2 skipped when 4.1 refuses",
+      "pass": true
+    },
+    {
+      "check": "b01 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b01 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b02 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b02 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b03 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b03 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b04 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b04 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b05 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b05 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b06 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b06 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b07 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b07 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b08 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b08 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b09 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b09 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b10 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b10 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b11 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b11 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b12 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b12 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b13 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b13 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b14 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b14 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b15 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b15 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b16 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b16 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b17 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b17 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b18 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b18 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b19 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b19 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b20 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b20 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b21 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b21 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b22 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b22 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b23 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b23 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b24 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b24 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b25 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b25 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b26 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b26 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b27 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b27 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b28 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b28 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b29 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b29 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b30 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b30 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b31 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b31 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b32 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b32 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b33 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b33 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b34 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b34 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b35 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b35 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b36 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b36 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b37 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b37 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b38 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b38 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b39 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b39 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b40 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b40 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b41 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b41 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b42 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b42 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b43 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b43 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b44 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b44 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b45 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b45 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b46 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b46 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b47 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b47 exact duplicate invariant",
+      "pass": true
+    },
+    {
+      "check": "b48 event order invariant",
+      "pass": true
+    },
+    {
+      "check": "b48 exact duplicate invariant",
+      "pass": true
+    }
+  ],
+  "failed": 0,
+  "passed": 119,
+  "source": "pinned specification and RFC8032 test 1; no corpus expected values"
+}

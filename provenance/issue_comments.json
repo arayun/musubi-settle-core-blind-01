@@ -1,0 +1,30 @@
+{
+  "comments": [
+    {
+      "url": "https://github.com/ogasurfproject-jpg/horizon-shield/issues/60#issuecomment-6356576391",
+      "body": "A note for blind-01. After the blind-01 answers were committed (root 4966f39ba2fbda18), differential fuzzing found one place where the reference contradicts the pinned text: when 4.1 rejects the contract, the reference still added `unscoped_approvals_refused`, while 4.2 applies only when 4.1 accepts. The reference is corrected in revision 0.9 of SETTLE_CORE_v0.md (NOTES.md N23). No rule of the text changed.\n\nThe committed answers were produced by the reference before the fix, and they are not changed. At opening, each disagreement is judged against the pinned text, as the README says. So if an answer from the old reference contradicts 4.2, that counts as the reference being wrong, not the implementation.\n",
+      "user": {
+        "login": "ogasurfproject-jpg",
+        "name": "ogasurfproject-jpg",
+        "email": null,
+        "avatar_url": "https://avatars.githubusercontent.com/u/245396182?v=4",
+        "id": 245396182
+      },
+      "id": 6356576391,
+      "pull_request_review_id": null,
+      "in_reply_to_id": null,
+      "created_at": null,
+      "updated_at": null,
+      "review": null,
+      "side": null,
+      "line": null,
+      "start_line": null,
+      "path": null,
+      "body_html": "<p dir=\"auto\">A note for blind-01. After the blind-01 answers were committed (root 4966f39ba2fbda18), differential fuzzing found one place where the reference contradicts the pinned text: when 4.1 rejects the contract, the reference still added <code class=\"notranslate\">unscoped_approvals_refused</code>, while 4.2 applies only when 4.1 accepts. The reference is corrected in revision 0.9 of SETTLE_CORE_v0.md (NOTES.md N23). No rule of the text changed.</p>\n<p dir=\"auto\">The committed answers were produced by the reference before the fix, and they are not changed. At opening, each disagreement is judged against the pinned text, as the README says. So if an answer from the old reference contradicts 4.2, that counts as the reference being wrong, not the implementation.</p>"
+    }
+  ],
+  "url": "https://github.com/ogasurfproject-jpg/horizon-shield/issues/60",
+  "title": "ogasurfproject-jpg/horizon-shield Issue #60 comments",
+  "display_url": "https://github.com/ogasurfproject-jpg/horizon-shield/issues/60",
+  "display_title": "ogasurfproject-jpg/horizon-shield Issue #60 comments"
+}

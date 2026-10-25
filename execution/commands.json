@@ -1,0 +1,78 @@
+[
+  {
+    "argv": [
+      "python3",
+      "run.py",
+      "--case",
+      "b01",
+      "--outputs",
+      "b01-first",
+      "--log",
+      "execution/b01-first.json"
+    ],
+    "exit_code": 0,
+    "started_utc": "2026-10-25T05:07:55.789296+00:00",
+    "stderr": "",
+    "stdout": "b01 within_grant / final\n"
+  },
+  {
+    "argv": [
+      "python3",
+      "run.py"
+    ],
+    "exit_code": 0,
+    "started_utc": "2026-10-25T05:07:55.890327+00:00",
+    "stderr": "",
+    "stdout": "b01 within_grant / final\nb02 within_grant / final\nb03 underspecified / undetermined\nb04 underspecified / undetermined\nb05 within_grant / final\nb06 within_grant / final\nb07 within_grant / final\nb08 within_grant / final\nb09 nothing_to_settle / final\nb10 underspecified / undetermined\nb11 within_grant / final\nb12 deviation / final\nb13 deviation / final\nb14 deviation / provisional\nb15 within_grant / final\nb16 deviation / final\nb17 within_grant / final\nb18 within_grant / final\nb19 underspecified / undetermined\nb20 deviation / final\nb21 within_grant / final\nb22 underspecified / undetermined\nb23 within_grant / final\nb24 underspecified / undetermined\nb25 underspecified / undetermined\nb26 deviation / final\nb27 deviation / final\nb28 within_grant / final\nb29 nothing_to_settle / final\nb30 nothing_to_settle / final\nb31 within_grant / final\nb32 deviation / final\nb33 underspecified / undetermined\nb34 within_grant / final\nb35 deviation / final\nb36 within_grant / final\nb37 within_grant / final\nb38 within_grant / final\nb39 nothing_to_settle / final\nb40 within_grant / final\nb41 deviation / final\nb42 deviation / final\nb43 underspecified / undetermined\nb44 underspecified / undetermined\nb45 deviation / final\nb46 nothing_to_settle / final\nb47 within_grant / final\nb48 underspecified / undetermined\n"
+  },
+  {
+    "argv": [
+      "python3",
+      "run.py",
+      "--outputs",
+      "repeat-out",
+      "--log",
+      "execution/repeat.json"
+    ],
+    "exit_code": 0,
+    "started_utc": "2026-10-25T05:07:56.235287+00:00",
+    "stderr": "",
+    "stdout": "b01 within_grant / final\nb02 within_grant / final\nb03 underspecified / undetermined\nb04 underspecified / undetermined\nb05 within_grant / final\nb06 within_grant / final\nb07 within_grant / final\nb08 within_grant / final\nb09 nothing_to_settle / final\nb10 underspecified / undetermined\nb11 within_grant / final\nb12 deviation / final\nb13 deviation / final\nb14 deviation / provisional\nb15 within_grant / final\nb16 deviation / final\nb17 within_grant / final\nb18 within_grant / final\nb19 underspecified / undetermined\nb20 deviation / final\nb21 within_grant / final\nb22 underspecified / undetermined\nb23 within_grant / final\nb24 underspecified / undetermined\nb25 underspecified / undetermined\nb26 deviation / final\nb27 deviation / final\nb28 within_grant / final\nb29 nothing_to_settle / final\nb30 nothing_to_settle / final\nb31 within_grant / final\nb32 deviation / final\nb33 underspecified / undetermined\nb34 within_grant / final\nb35 deviation / final\nb36 within_grant / final\nb37 within_grant / final\nb38 within_grant / final\nb39 nothing_to_settle / final\nb40 within_grant / final\nb41 deviation / final\nb42 deviation / final\nb43 underspecified / undetermined\nb44 underspecified / undetermined\nb45 deviation / final\nb46 nothing_to_settle / final\nb47 within_grant / final\nb48 underspecified / undetermined\n"
+  },
+  {
+    "argv": [
+      "python3",
+      "selftest.py"
+    ],
+    "exit_code": 0,
+    "started_utc": "2026-10-25T05:07:56.633896+00:00",
+    "stderr": "",
+    "stdout": "{\"passed\": 119, \"failed\": 0}\n"
+  },
+  {
+    "argv": [
+      "python3",
+      "sources/blind-01/blind_commit.py",
+      "check-inputs",
+      "--public",
+      "sources/blind-01"
+    ],
+    "exit_code": 0,
+    "started_utc": "2026-10-25T05:07:57.108632+00:00",
+    "stderr": "",
+    "stdout": "inputs: 178 files, 178 listed, 0 mismatches\n"
+  },
+  {
+    "argv": [
+      "python3",
+      "sources/blind-01/blind_compare.py",
+      "freeze",
+      "--outputs",
+      "out"
+    ],
+    "exit_code": 0,
+    "started_utc": "2026-10-25T05:07:57.152096+00:00",
+    "stderr": "",
+    "stdout": "files: 48 of 48 present\nfreeze digest c3b9cf8d88c22e95186aa1c2cff0bdbad54a98104e5a8936d42af1d0773c735b\n"
+  }
+]

@@ -1,0 +1,954 @@
+{
+  "b01": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "26510101c9b10b989484cc2debde3b119a483a809a63b8c40f33107b5d5a2e43": "accepted",
+      "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5"
+      },
+      {
+        "height": 800003,
+        "kind": "revocation",
+        "sha256": "26510101c9b10b989484cc2debde3b119a483a809a63b8c40f33107b5d5a2e43"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b02": {
+    "bond_outcome": "held",
+    "contract_sha256": "5fd55165feb719a1d5d8b373d1ca8bb222779ccd9627330f0e1bec86853b86a1",
+    "deviation_codes": [],
+    "dispositions": {
+      "889b8316298e5dac9b19f74235232d574242fb95527473483917056e1c32326a": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "889b8316298e5dac9b19f74235232d574242fb95527473483917056e1c32326a"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b03": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {},
+    "event_set": [],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "chain_view_rejected",
+      "view_not_strict"
+    ],
+    "verdict": "underspecified"
+  },
+  "b04": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "fc07f2648da0cd30f8ab145c93d0bdf8772121217ca433291bcc8bdafd628ecc",
+    "deviation_codes": [],
+    "dispositions": {
+      "1d2822d47289ee1ff7f684c69b5aa12f2d77cd2f7a0014e20b704b7d30a0e8bb": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "1d2822d47289ee1ff7f684c69b5aa12f2d77cd2f7a0014e20b704b7d30a0e8bb"
+      }
+    ],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "parent_narrowing_failed"
+    ],
+    "verdict": "underspecified"
+  },
+  "b05": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "5edaf1a89b254cb885fab71d5107ce13b3c915893f499ece53596a05bacdceb1": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "5edaf1a89b254cb885fab71d5107ce13b3c915893f499ece53596a05bacdceb1"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b06": {
+    "bond_outcome": "held",
+    "contract_sha256": "5f264873f715416757c4d49ca67212b8f2263ab9eb606cc95519073e450f7ab8",
+    "deviation_codes": [],
+    "dispositions": {
+      "261da0f59c2e8fd9c1956d3b42d61c31d68eabb588a32aa05cb6b6d739b08b2e": "accepted",
+      "627ef571acfe1f47257ed3533f62c64739fb452c8e85c3e39294c6ba2e3bafaa": "anchor_not_strict",
+      "c1a0a19f844e6da070baa1d55644ab21ea9b5165e48af05ad3238e4449edf317": "accepted",
+      "c61c824c626b3e91b6f0db303fe153eb47004bdef1f10f440e7f359276fb519c": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "revocation",
+        "sha256": "c61c824c626b3e91b6f0db303fe153eb47004bdef1f10f440e7f359276fb519c"
+      },
+      {
+        "height": 800003,
+        "kind": "revocation_ack",
+        "sha256": "261da0f59c2e8fd9c1956d3b42d61c31d68eabb588a32aa05cb6b6d739b08b2e"
+      },
+      {
+        "height": 800004,
+        "kind": "execution",
+        "sha256": "c1a0a19f844e6da070baa1d55644ab21ea9b5165e48af05ad3238e4449edf317"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b07": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "71df5147d8913da538542eb77e40c37100b5bb4914e3af7a1266d6d2df28bfc9": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "71df5147d8913da538542eb77e40c37100b5bb4914e3af7a1266d6d2df28bfc9"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b08": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b09": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "2015b651b5cf5da21a77ab8ba31a53a612bc0479498e5cb674b200890ed41776": "inconsistent"
+    },
+    "event_set": [],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "nothing_to_settle"
+  },
+  "b10": {
+    "bond_outcome": "n/a",
+    "contract_sha256": "2efba8ed562cfbddb805d42003836250015890c2e583b1cd669fae1f9f568862",
+    "deviation_codes": [],
+    "dispositions": {
+      "701f10858f514f806156c03bcfe617cbb59be7a6eb034d07cd0f4e49aaa9809d": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "701f10858f514f806156c03bcfe617cbb59be7a6eb034d07cd0f4e49aaa9809d"
+      }
+    ],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "bond_malformed",
+      "parent_narrowing_failed"
+    ],
+    "verdict": "underspecified"
+  },
+  "b11": {
+    "bond_outcome": "held",
+    "contract_sha256": "eb8659d134ef34c7c9853039ed730abab851d1a8263c739314f1f75a06f9637d",
+    "deviation_codes": [],
+    "dispositions": {
+      "992d11345ea8af64df1247673c873d040b7c99f358da4257338e3bc0b5615742": "revocation_not_provided_for",
+      "a5caf03a82a5c4be2d4505b0a07277036331a00b9cbc5e6d5bc32e0a62cc7fdc": "accepted",
+      "b84d1eaefadb6a5737ecb61f7be537ed065a1f408b69d717e0b69a727728e62a": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800003,
+        "kind": "revocation_ack",
+        "sha256": "a5caf03a82a5c4be2d4505b0a07277036331a00b9cbc5e6d5bc32e0a62cc7fdc"
+      },
+      {
+        "height": 800004,
+        "kind": "execution",
+        "sha256": "b84d1eaefadb6a5737ecb61f7be537ed065a1f408b69d717e0b69a727728e62a"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b12": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "b2e1aeebed078d8ebbef36cde404f96e776878b6f99c50c93cfa28f262b3ba16",
+    "deviation_codes": [
+      "after_expiry",
+      "prohibited"
+    ],
+    "dispositions": {
+      "065a78aa3f39d3e65271b571ba64a4f5a599a427c6adc9c215e88d5ed9325a3c": "accepted",
+      "592adda3c35c8781366a410ea4cd0901523ec076b44dae3f10bebce294d203bc": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800003,
+        "kind": "execution",
+        "sha256": "592adda3c35c8781366a410ea4cd0901523ec076b44dae3f10bebce294d203bc"
+      },
+      {
+        "height": 800004,
+        "kind": "execution",
+        "sha256": "065a78aa3f39d3e65271b571ba64a4f5a599a427c6adc9c215e88d5ed9325a3c"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b13": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "b99773a35420022d001d167113e46f7dfcba20c2d2a71238a0a56ecc6c55da13",
+    "deviation_codes": [
+      "conditional"
+    ],
+    "dispositions": {
+      "526a6387487cfbfddf97416e2c3e90768b8b30e3e5aeed7c5a81d2961d04d8cf": "accepted",
+      "846da3e42562b04873bb12bd3e8e56243a7943f40e713f7806da3a8b4e034c84": "accepted",
+      "bc6fe070de277b0fb2a955dc1fcd1ab0d76ffa598d70964cc958da3ec5a7d06a": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "bc6fe070de277b0fb2a955dc1fcd1ab0d76ffa598d70964cc958da3ec5a7d06a"
+      },
+      {
+        "height": 800003,
+        "kind": "execution",
+        "sha256": "526a6387487cfbfddf97416e2c3e90768b8b30e3e5aeed7c5a81d2961d04d8cf"
+      },
+      {
+        "height": 800003,
+        "kind": "execution",
+        "sha256": "846da3e42562b04873bb12bd3e8e56243a7943f40e713f7806da3a8b4e034c84"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b14": {
+    "bond_outcome": "pending_finality",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [
+      "prohibited"
+    ],
+    "dispositions": {
+      "c117b66a1c3f50cda14391adb339f7fff170d613d5f589316c84bc0c58c812cc": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "c117b66a1c3f50cda14391adb339f7fff170d613d5f589316c84bc0c58c812cc"
+      }
+    ],
+    "status": "provisional",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b15": {
+    "bond_outcome": "held",
+    "contract_sha256": "f97d4a1e41d4cd4ebeb47dea25bd338e158c72a1a0646dfbb78ac660719c26d5",
+    "deviation_codes": [],
+    "dispositions": {
+      "995541606a7b90e57ea02888723abca89e46627068c5c2d745720b2b5007f573": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "995541606a7b90e57ea02888723abca89e46627068c5c2d745720b2b5007f573"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b16": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [
+      "prohibited"
+    ],
+    "dispositions": {
+      "bbec4fe93e54b73a617e5bb36ac7f735873337b10b0ed2a6d43fe7813e95f7ea": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "bbec4fe93e54b73a617e5bb36ac7f735873337b10b0ed2a6d43fe7813e95f7ea"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b17": {
+    "bond_outcome": "held",
+    "contract_sha256": "5f264873f715416757c4d49ca67212b8f2263ab9eb606cc95519073e450f7ab8",
+    "deviation_codes": [],
+    "dispositions": {
+      "35540a7f4c42f3955da51995e3c9987e8e104453bc27635554c86655f8d82b9d": "rejected",
+      "3677caa0c7585388b51c4d87856cb034e67cf9730bc4310df5abb1952613c1b8": "accepted",
+      "6174702cf308f07517dbb5493de78bc4d0ed3c700aa8c3dbbbf6c0dd5524a253": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800003,
+        "kind": "revocation_ack",
+        "sha256": "6174702cf308f07517dbb5493de78bc4d0ed3c700aa8c3dbbbf6c0dd5524a253"
+      },
+      {
+        "height": 800004,
+        "kind": "execution",
+        "sha256": "3677caa0c7585388b51c4d87856cb034e67cf9730bc4310df5abb1952613c1b8"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b18": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b19": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {},
+    "event_set": [],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "contract_not_verified"
+    ],
+    "verdict": "underspecified"
+  },
+  "b20": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [
+      "revoked"
+    ],
+    "dispositions": {
+      "9e93d8377ff02f631c8cfe025c61c8522a918deeab14a4ddcdce449101d3b7ae": "accepted",
+      "bc48c7351b670a370f539a49b73b541d8b96a28d2de939edaf82568d3481e70b": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "revocation",
+        "sha256": "bc48c7351b670a370f539a49b73b541d8b96a28d2de939edaf82568d3481e70b"
+      },
+      {
+        "height": 800003,
+        "kind": "execution",
+        "sha256": "9e93d8377ff02f631c8cfe025c61c8522a918deeab14a4ddcdce449101d3b7ae"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b21": {
+    "bond_outcome": "held",
+    "contract_sha256": "b99773a35420022d001d167113e46f7dfcba20c2d2a71238a0a56ecc6c55da13",
+    "deviation_codes": [],
+    "dispositions": {
+      "45f3cc100788e3f64469fc393c64ada9891accc1ea80257ead6b93d7122fbb08": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "45f3cc100788e3f64469fc393c64ada9891accc1ea80257ead6b93d7122fbb08"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b22": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "b99773a35420022d001d167113e46f7dfcba20c2d2a71238a0a56ecc6c55da13",
+    "deviation_codes": [],
+    "dispositions": {
+      "e5c2bb29fbcd7459b2b1b26bca8c2f99f758f0c9a9b51ceb3ecff3d080b942df": "record_not_strict"
+    },
+    "event_set": [],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "record_not_strict"
+    ],
+    "verdict": "underspecified"
+  },
+  "b23": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "2c9d38451d49bbc5f37a5a86f10a1fbe3bf8a380e66c5c0931ba2619145227a3": "orphaned",
+      "ffb3e330d9dbcfecff0c5e3d6b1f9c450f595af43e2a00ac03e94de8b6293dd0": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800003,
+        "kind": "execution",
+        "sha256": "ffb3e330d9dbcfecff0c5e3d6b1f9c450f595af43e2a00ac03e94de8b6293dd0"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b24": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "5ffc5e0e6c0d8b61c0e1136daa2dd74b48dd8c7db61f1f2018f761e79bd3d0fd",
+    "deviation_codes": [],
+    "dispositions": {
+      "3f966ea8a1fe7a42b23aa2827b3f344921f18e2db35ba83ba62b836e31c8abbe": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "3f966ea8a1fe7a42b23aa2827b3f344921f18e2db35ba83ba62b836e31c8abbe"
+      }
+    ],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "parent_narrowing_failed"
+    ],
+    "verdict": "underspecified"
+  },
+  "b25": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "0b56eb36e9113844fd3b6cd4840cbc211dbf1831d4e09fe3cd67ae9dc9cb5acc",
+    "deviation_codes": [],
+    "dispositions": {},
+    "event_set": [],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "key_conflict"
+    ],
+    "verdict": "underspecified"
+  },
+  "b26": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [
+      "nonconforming_record"
+    ],
+    "dispositions": {
+      "00ed2858f063f244e921aac45cf1cfe5188ec8d672c5a77ab59892fa2091d671": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "00ed2858f063f244e921aac45cf1cfe5188ec8d672c5a77ab59892fa2091d671"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b27": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "1139c750466fb6a64d0740fe9bc9036d41030494a2b022d659a31337f837527b",
+    "deviation_codes": [
+      "revoked"
+    ],
+    "dispositions": {
+      "4ce4c54a8d8c419c041e834c7fb6c6e6b4d7114cb254ce68215992f9ef602952": "accepted",
+      "6114b65b43b7b0f9063ddab628a85c3deaea872e9354d7b6144bcea321dbd95b": "accepted",
+      "61936a7c2970eae3bbc5995664ebeb5b4588b4a55bd0ab0ecd5ceca2ed1fb884": "accepted",
+      "6f771a0706cc9465fce4a09091d4fc731e87c45cfd45b26cf0b6b72930d70553": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "6f771a0706cc9465fce4a09091d4fc731e87c45cfd45b26cf0b6b72930d70553"
+      },
+      {
+        "height": 800003,
+        "kind": "revocation_ack",
+        "sha256": "61936a7c2970eae3bbc5995664ebeb5b4588b4a55bd0ab0ecd5ceca2ed1fb884"
+      },
+      {
+        "height": 800004,
+        "kind": "revocation",
+        "sha256": "4ce4c54a8d8c419c041e834c7fb6c6e6b4d7114cb254ce68215992f9ef602952"
+      },
+      {
+        "height": 800005,
+        "kind": "execution",
+        "sha256": "6114b65b43b7b0f9063ddab628a85c3deaea872e9354d7b6144bcea321dbd95b"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b28": {
+    "bond_outcome": "held",
+    "contract_sha256": "e0816babf33628039717e68d8cf8a0e289170e7cfc9d7aeaad8eb088b279f65b",
+    "deviation_codes": [],
+    "dispositions": {
+      "579f0375da4a249d47159aa28e1142de7c0457096cd9bf19ad2ebcc64e2e0f6f": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "579f0375da4a249d47159aa28e1142de7c0457096cd9bf19ad2ebcc64e2e0f6f"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b29": {
+    "bond_outcome": "held",
+    "contract_sha256": "e0816babf33628039717e68d8cf8a0e289170e7cfc9d7aeaad8eb088b279f65b",
+    "deviation_codes": [],
+    "dispositions": {
+      "a912007d1e97c3bfd4619bc6f2d1ebca96b48a5e6fde690f7544b72146f780fa": "rejected"
+    },
+    "event_set": [],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "nothing_to_settle"
+  },
+  "b30": {
+    "bond_outcome": "held",
+    "contract_sha256": "e0816babf33628039717e68d8cf8a0e289170e7cfc9d7aeaad8eb088b279f65b",
+    "deviation_codes": [],
+    "dispositions": {
+      "e91eb30a56238c46856a32653ecd9d66fa196c31d8f0c04ea66db2273de3f852": "rejected"
+    },
+    "event_set": [],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "nothing_to_settle"
+  },
+  "b31": {
+    "bond_outcome": "held",
+    "contract_sha256": "1139c750466fb6a64d0740fe9bc9036d41030494a2b022d659a31337f837527b",
+    "deviation_codes": [],
+    "dispositions": {
+      "9750c63ac287513a0a64ed9c06161cace9e4e655730f8b9bbdba6c150494c0b9": "accepted",
+      "c97e9ad361b7bb33f595cc8ebabab7bf5ef321e559b2e1a993c22018b0fce522": "ignored",
+      "d1fc6ac68ed52024699d9b412db4d8f86899842f36cae486b27b7edfc003383a": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800003,
+        "kind": "revocation_ack",
+        "sha256": "d1fc6ac68ed52024699d9b412db4d8f86899842f36cae486b27b7edfc003383a"
+      },
+      {
+        "height": 800004,
+        "kind": "execution",
+        "sha256": "9750c63ac287513a0a64ed9c06161cace9e4e655730f8b9bbdba6c150494c0b9"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b32": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [
+      "prohibited"
+    ],
+    "dispositions": {
+      "d7130bf8ac6338b9fd0bcfed6a1c8034b66dfb736717557a08ff0d562b21bebd": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "d7130bf8ac6338b9fd0bcfed6a1c8034b66dfb736717557a08ff0d562b21bebd"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b33": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "7c5c9de1576a73ec13948e8a49ea1c706fafcc2baa1b7d1afcb7277d36b9d5bf",
+    "deviation_codes": [],
+    "dispositions": {
+      "5aacac7fcbbcc08f3ba165783d32348ade6b44b901c8440335737136d2c0351c": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "5aacac7fcbbcc08f3ba165783d32348ade6b44b901c8440335737136d2c0351c"
+      }
+    ],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "parent_narrowing_failed"
+    ],
+    "verdict": "underspecified"
+  },
+  "b34": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "6448087397cfb92907e7c721aa6d16e53517043d35634d8495d26335f7b72cce": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "6448087397cfb92907e7c721aa6d16e53517043d35634d8495d26335f7b72cce"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b35": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [
+      "nonconforming_record"
+    ],
+    "dispositions": {
+      "7fba30e318578fb42117cdbe0f19a68119faa900edfa59642a143ad418290286": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "7fba30e318578fb42117cdbe0f19a68119faa900edfa59642a143ad418290286"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b36": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "e45fb99e3208260af2a7d7323adf945ce9cca4d6def2c9f5a7cf4ddc66c25aaf": "record_not_strict",
+      "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b37": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "e0be2c9aea241ca9d9f61374ed01540192830ab0ced3f0a573123929192f80b9": "duplicate_dropped",
+      "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b38": {
+    "bond_outcome": "held",
+    "contract_sha256": "b99773a35420022d001d167113e46f7dfcba20c2d2a71238a0a56ecc6c55da13",
+    "deviation_codes": [],
+    "dispositions": {
+      "35188a2dcaa9259023302f8a797b29a11473d2a3e2717e00785abd1a0105d8bd": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "35188a2dcaa9259023302f8a797b29a11473d2a3e2717e00785abd1a0105d8bd"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b39": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "804ffcec125ff96c0fecc8e8a8f5b795278b1fb92478b982a16a4cc4015ff2b5": "signature_not_strict"
+    },
+    "event_set": [],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "nothing_to_settle"
+  },
+  "b40": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "0af340ad86cbf2470b5c667a9e2111b016ffdf73d6e4ce6d19e54d11f73f1f9f": "ignored",
+      "7779d990bdaffa8bfcdd89af0925aab1607cd23e1f313d0528ecdb77a0ece081": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "7779d990bdaffa8bfcdd89af0925aab1607cd23e1f313d0528ecdb77a0ece081"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b41": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "4d68f942d15fc07e2db5ef0fb077ee7e05ca526a19a0928b2cbe2ed0dd6979a8",
+    "deviation_codes": [
+      "delegation"
+    ],
+    "dispositions": {
+      "af5c688a680186f3244c506d42b2a925bc659df7eb503f06e12fcde6bc6760b2": "accepted",
+      "eca64adad0df733e8fb344497d39505732e6e9f54a958dd57041502bf74a7e80": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "af5c688a680186f3244c506d42b2a925bc659df7eb503f06e12fcde6bc6760b2"
+      },
+      {
+        "height": 800003,
+        "kind": "execution",
+        "sha256": "eca64adad0df733e8fb344497d39505732e6e9f54a958dd57041502bf74a7e80"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b42": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "b99773a35420022d001d167113e46f7dfcba20c2d2a71238a0a56ecc6c55da13",
+    "deviation_codes": [
+      "conditional"
+    ],
+    "dispositions": {
+      "5b1cd9bcb60afe4b63639f6a1c588883214932a52e896542e3ccb45cd62e364d": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "5b1cd9bcb60afe4b63639f6a1c588883214932a52e896542e3ccb45cd62e364d"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b43": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "f4fbd9761883eee3a0c31b1bd844e7723593c4bb160ad919606191b3f5e07633": "record_not_strict"
+    },
+    "event_set": [],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "record_not_strict"
+    ],
+    "verdict": "underspecified"
+  },
+  "b44": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "7c5c9de1576a73ec13948e8a49ea1c706fafcc2baa1b7d1afcb7277d36b9d5bf",
+    "deviation_codes": [],
+    "dispositions": {
+      "5aacac7fcbbcc08f3ba165783d32348ade6b44b901c8440335737136d2c0351c": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "5aacac7fcbbcc08f3ba165783d32348ade6b44b901c8440335737136d2c0351c"
+      }
+    ],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "parent_narrowing_failed"
+    ],
+    "verdict": "underspecified"
+  },
+  "b45": {
+    "bond_outcome": "forfeited",
+    "contract_sha256": "1139c750466fb6a64d0740fe9bc9036d41030494a2b022d659a31337f837527b",
+    "deviation_codes": [
+      "revoked"
+    ],
+    "dispositions": {
+      "061e1eab07f2258abf3686ebfbb19e486525949db952978850bd9253ecd60a31": "accepted",
+      "98e5a53d01ffa15c73224f6dd88d14bd35f90756bcd4cd6c5b5091d3e59f8d6b": "accepted",
+      "e00f95b3d721c4cd3fdf76cc04e9d573de92a9813fb15217ce8128820e15a305": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "revocation",
+        "sha256": "061e1eab07f2258abf3686ebfbb19e486525949db952978850bd9253ecd60a31"
+      },
+      {
+        "height": 800003,
+        "kind": "revocation_ack",
+        "sha256": "98e5a53d01ffa15c73224f6dd88d14bd35f90756bcd4cd6c5b5091d3e59f8d6b"
+      },
+      {
+        "height": 800003,
+        "kind": "execution",
+        "sha256": "e00f95b3d721c4cd3fdf76cc04e9d573de92a9813fb15217ce8128820e15a305"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "deviation"
+  },
+  "b46": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "bf6ed2ff747d4ce9e67d450ab225d6a4b36db87c2d73f78dc0d43ac42e0340d3": "record_not_strict"
+    },
+    "event_set": [],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "nothing_to_settle"
+  },
+  "b47": {
+    "bond_outcome": "held",
+    "contract_sha256": "06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e",
+    "deviation_codes": [],
+    "dispositions": {
+      "9659e4874ab59f3da484699b4f7dc545c0e7e3bc339ad1ab200e1588b2d99420": "record_not_strict",
+      "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5"
+      }
+    ],
+    "status": "final",
+    "underspecified_reasons": [],
+    "verdict": "within_grant"
+  },
+  "b48": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "03f66277f9d3dcfc37f4c753b79792435a859455988d709e6320f01544cb82c7",
+    "deviation_codes": [],
+    "dispositions": {
+      "a73cca6ed6f7544926f49f7c17091e166f1f3caf4d56b7172a6039447ff2d541": "accepted"
+    },
+    "event_set": [
+      {
+        "height": 800002,
+        "kind": "execution",
+        "sha256": "a73cca6ed6f7544926f49f7c17091e166f1f3caf4d56b7172a6039447ff2d541"
+      }
+    ],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "parent_narrowing_failed"
+    ],
+    "verdict": "underspecified"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "retrieval_date": "2026-10-25",
+  "status": "prior assistant reports, not independently reverified in this run",
+  "relevant_findings": [
+    "Prior conversations report MUSUBI reference verifier/settlement reproductions on 2026-10-20 and 2026-10-22. Exact previously read code-file inventory is unavailable.",
+    "No specific prior direct access to SETTLE_CORE_v0, NOTES.md, gen_vectors.py, run_reference.py, exercise_inputs.py, EXERCISE.txt or public expected.json/vectors.json for this blind set was established by retrieval. Absence in retrieval does not prove absence of access.",
+    "Current prompt already disclosed the reference bug. Issue #60 and its comment were read before implementing."
+  ],
+  "privacy": "Unrelated retrieval content omitted."
+}

@@ -1,0 +1,29 @@
+{
+  "binary_preserved_not_verified": [
+    "settle-core-blind-01/COMMITMENT.txt.ots"
+  ],
+  "failed_metadata_attempt": "GET /git/commits/f23867e0 returned 404; no commit source or diff was received",
+  "input_list_sha256": "afc5073730352c74dfc47da4ed8d3dbe32f112335a6933ce39ee47f92a244e54",
+  "input_ref": "f23867e0",
+  "limitations": "Prior reference work and known defect disclosed; no unqualified blindness claim; no code-level settler reference read this run.",
+  "no_full_repo_clone": true,
+  "no_withheld_answers_or_public_expected_values_read": true,
+  "other_read": [
+    "Issue #60 and its one operator comment",
+    "RFC8032 general reference and test 1",
+    "filtered prior exposure retrieval",
+    "GitHub authenticated login arayun"
+  ],
+  "read_paths": [
+    "settle-core-v0/SETTLE_CORE_v0.md at pinned commit",
+    "settle-core-blind-01/README.md",
+    "settle-core-blind-01/SHA256SUMS",
+    "settle-core-blind-01/COMMITMENT.txt",
+    "settle-core-blind-01/blind_compare.py",
+    "settle-core-blind-01/blind_commit.py",
+    "all inputs listed in input_fetches.json"
+  ],
+  "repository": "ogasurfproject-jpg/horizon-shield",
+  "spec_commit": "d7f5a91ed5565a4b1079f0e627d5d75eeb4a8367",
+  "spec_sha256": "3382374416254f85eec0c4f03699161748db5999794e75b68a00e7a4b7cf27c2"
+}

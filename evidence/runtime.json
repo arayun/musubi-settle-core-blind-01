@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "cffi": "2.1.1",
+    "cryptography": "50.0.2",
+    "pycparser": "3.11"
+  },
+  "hermetic_environment": false,
+  "network_used_by_settler": false,
+  "openssl": "OpenSSL 4.0.3 29 Sep 2026",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+}

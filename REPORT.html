@@ -1,0 +1,941 @@
+<!doctype html><html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ARAYUN_173 · MUSUBI Blind-01</title><style>
+:root{color-scheme:light}*{box-sizing:border-box}body{font:16px/1.6 system-ui,sans-serif;color:#172323;background:#f1f4f3;margin:0}main{max-width:1180px;margin:auto;padding:48px 28px 80px}h1{font-size:clamp(29px,4vw,44px);line-height:1.16;letter-spacing:-.04em;max-width:850px}h2{margin-top:42px;line-height:1.3;font-size:24px}p{max-width:950px}a{color:#086b60}header{border-bottom:2px solid #183d38;padding-bottom:24px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#506c64}.lead{font-size:20px}.note{border-left:4px solid #aa6b24;background:#fff8e9;padding:15px 20px;margin:24px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:28px 0}.stat{background:white;padding:16px 20px;border:1px solid #d6dfdc}.stat b{display:block;font-size:32px;color:#126b5e}table{border-collapse:collapse;width:100%;background:#fff;font-size:13px}td,th{text-align:left;vertical-align:top;border-bottom:1px solid #d6dfdc;padding:12px}th{background:#dce7e2}.scroll{overflow-x:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef3f1;padding:16px;font:12px/1.5 ui-monospace,monospace}code{font:12px ui-monospace,monospace;overflow-wrap:anywhere}summary{cursor:pointer;color:#086b60}footer{margin-top:40px;border-top:1px solid #bccdc7;padding-top:16px;color:#4e6760;font-size:13px}@media print{body{background:#fff}main{padding:0}details[open] pre{font-size:9px}h2{break-after:avoid}tr{break-inside:avoid}}
+</style><main><header><p class="eyebrow">ARAYUN_173 · unabhängiger Prüfkandidat · 25. Oktober 2026</p><h1>48 Ergebnisse eingefroren.<br>Der Sollwertvergleich steht aus.</h1><p class="lead">MUSUBI Settlement Core v0 · blind-01 · Revision 0.8</p><p>Eigenständige Implementierung anhand des fixierten Textes. Zuerst b01, anschließend b01–b48 ausgeführt. Alle 178 Eingabedateien entsprechen dem veröffentlichten SHA256SUMS. Alle 48 Ausgaben sind bei Wiederholung bytegleich.</p></header>
+<div class="note"><strong>Privates Einfrierpaket.</strong> Dieses Paket enthält die berechneten Ausgaben. Vor der Öffnung am 21. November 2026 nicht öffentlich hochladen. Die Werte sind eigene Berechnungen, keine freigegebenen Sollwerte. 48 abgeschlossene Berechnungen bedeuten nicht 48 bestandene Blindvergleiche.</div>
+<div class="grid"><div class="stat"><b>20</b>within_grant</div><div class="stat"><b>12</b>deviation</div><div class="stat"><b>11</b>underspecified</div><div class="stat"><b>5</b>nothing_to_settle</div><div class="stat"><b>119</b>eigene Checks bestanden</div></div>
+<h2>Was tatsächlich ausgeführt wurde</h2><p><code>run.py --case b01</code> lief zuerst; <code>run.py</code> danach über alle 48 Fälle. Jeder Lauf schreibt die acht Kernfelder und ein Ausführungsprotokoll mit Eingabeprüfsummen, Laufzeit, Fehlerstatus und internen Prüfschritten. Kein Fall warf einen Laufzeitfehler. Ein zweiter vollständiger Lauf reproduzierte alle Ausgabebytes. Der erste b01-Lauf stimmt mit b01 des vollständigen Laufs überein.</p><p>Die 119 zusätzlichen Checks umfassen einen RFC8032-Signaturkontrollwert, ungültige Schlüssel/Signaturen, strikte Zahlen-/JSON-Regeln, ein selbst signiertes Kontrollpaar zur Vertragsprüfung sowie je 48 Prüfungen auf Unabhängigkeit von Ereignisreihenfolge und identischen Kopien. Diese Checks sind keine öffentliche Konformitätssuite und verwenden keine öffentlichen oder geheimen Sollwerte.</p>
+<h2>b01: acht berechnete Kernfelder</h2><p>Die Ausführung in Block 800002 liegt vor dem Widerruf in Block 800003. Beide Belege werden aufgenommen; die Ausführung ist innerhalb des Grants. Der beobachtete Kettenstand genügt für <code>final</code>. Diese Beurteilung betrifft die signierten synthetischen Aufzeichnungen.</p><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;26510101c9b10b989484cc2debde3b119a483a809a63b8c40f33107b5d5a2e43&quot;: &quot;accepted&quot;,
+    &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;
+    },
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;revocation&quot;,
+      &quot;sha256&quot;: &quot;26510101c9b10b989484cc2debde3b119a483a809a63b8c40f33107b5d5a2e43&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre>
+<h2>Bekannte Referenzabweichung: aus dem Text ableitbar</h2><p>§4.1 verweigert einen ungültig signierten Vertrag. §4.2 ist ausdrücklich nur nach erfolgreichem §4.1 anzuwenden. Deshalb darf ein verweigerter Vertrag den §4.2-Grund <code>unscoped_approvals_refused</code> nicht erhalten. Dafür ist kein Referenzcode nötig.</p><p>Ein eigenes deterministisch signiertes Kontrollpaar trägt <code>allow_unscoped=true</code>: Mit gültigen Vertragssignaturen entsteht allein <code>unscoped_approvals_refused</code>; mit einer Signatur über andere Bytes entsteht allein <code>contract_not_verified</code>. Vertragsdateien und Ergebnisse liegen unter <code>tests/gate-*</code>.</p><p>Der Defekt war vor Entwicklung durch den Auftrag und den Issue-Kommentar bekannt. Das ist eine unabhängig implementierte Prüfung seiner textlichen Ableitbarkeit, keine blinde Erstentdeckung. Keiner der 48 geladenen Verträge trägt <code>allow_unscoped=true</code>. Eine tatsächliche Abweichung der geheimen Sollwerte wird heute nicht behauptet. Die alte Referenz wurde in diesem Lauf nicht ausgeführt.</p>
+<h2>Track und Quellenoffenlegung</h2><p><strong>Track-T-Methode mit offengelegter Vorbefassung.</strong> In diesem Lauf wurden keine öffentlichen <code>expected.json</code>/<code>vectors.json</code>, kein Referenzsettler, keine fremde Settlement-Implementierung, keine NOTES-Datei und kein ausgeschlossener Generator oder Runner eingesehen oder ausgeführt. Auch die erlaubten öffentlichen Vektoreingaben wurden nicht genutzt.</p><p>Gelesen wurden Revision 0.8, die erlaubten blind-01-Unterlagen und Eingaben sowie allgemeine RFC8032-Inhalte. Zusätzlich wurden Issue #60 und dessen Fehlerhinweis gelesen. Frühere Gesprächsberichte beschreiben MUSUBI-Referenzläufe vom 20. und 22. Oktober; die damals eingesehenen Code-Dateien lassen sich nicht vollständig rekonstruieren. Diese Vorbefassung verhindert eine uneingeschränkte Blindheitsbehauptung. <a href="READING_STATEMENT.txt">Vollständige Erklärung</a>.</p>
+<h2>Alle 48 berechneten Ergebnisse</h2><p>Jede aufklappbare Zeile enthält alle acht Felder. Vollständige Ergebnisdateien liegen unter <code>out/</code>; <code>evidence/results.json</code> konsolidiert sie. <code>evidence/case-identities.json</code> enthält die einzelnen Eingabeprüfsummen und je Fall einen definierten Manifest-Digest.</p><div class="scroll"><table><thead><tr><th>Fall</th><th>Verdict</th><th>Status</th><th>Bond</th><th>Codes / Gründe</th><th>Details</th></tr></thead><tbody><tr><td>b01</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;26510101c9b10b989484cc2debde3b119a483a809a63b8c40f33107b5d5a2e43&quot;: &quot;accepted&quot;,
+    &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;
+    },
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;revocation&quot;,
+      &quot;sha256&quot;: &quot;26510101c9b10b989484cc2debde3b119a483a809a63b8c40f33107b5d5a2e43&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>ea2c2269866e247831522b3e23badce794dd4ce049f1c62cedb05e3e24675c86</code><p>Ausgabe SHA-256</p><code>33442bec6e4d730a6df64629460fe7ddef45fc834c01a06c61cc8e39013d02f5</code></details></td></tr><tr><td>b02</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;5fd55165feb719a1d5d8b373d1ca8bb222779ccd9627330f0e1bec86853b86a1&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;889b8316298e5dac9b19f74235232d574242fb95527473483917056e1c32326a&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;889b8316298e5dac9b19f74235232d574242fb95527473483917056e1c32326a&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>8e1d81d4663f70de46b96bfd1b4c03d7e5938ab2e295998090159e79d1da5303</code><p>Ausgabe SHA-256</p><code>1a2aea508f9c6327d0812f72c71dc1829f51a60b6beeb4b2f90dd64ce1838a61</code></details></td></tr><tr><td>b03</td><td>underspecified</td><td>undetermined</td><td>undetermined</td><td>chain_view_rejected, view_not_strict</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;undetermined&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {},
+  &quot;event_set&quot;: [],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;chain_view_rejected&quot;,
+    &quot;view_not_strict&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>6e297529a4f40e51152659bbf6191abd5e1f42d8a3a444ded37bd31ccde789d4</code><p>Ausgabe SHA-256</p><code>49b776527c337ed909d8996ce6f22e6334ff07e5faca33411cc8f0e78a780dfa</code></details></td></tr><tr><td>b04</td><td>underspecified</td><td>undetermined</td><td>undetermined</td><td>parent_narrowing_failed</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;undetermined&quot;,
+  &quot;contract_sha256&quot;: &quot;fc07f2648da0cd30f8ab145c93d0bdf8772121217ca433291bcc8bdafd628ecc&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;1d2822d47289ee1ff7f684c69b5aa12f2d77cd2f7a0014e20b704b7d30a0e8bb&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;1d2822d47289ee1ff7f684c69b5aa12f2d77cd2f7a0014e20b704b7d30a0e8bb&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;parent_narrowing_failed&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>6d6dd009b09dc8e3ad9f69b54c39ce02f98ef459506f84ca121edb03c009a2e2</code><p>Ausgabe SHA-256</p><code>eaf1aaece716e6956febd7ea3578fe1d4020f368bdcb61c2ca3ea20c3499d433</code></details></td></tr><tr><td>b05</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;5edaf1a89b254cb885fab71d5107ce13b3c915893f499ece53596a05bacdceb1&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;5edaf1a89b254cb885fab71d5107ce13b3c915893f499ece53596a05bacdceb1&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>6b6dc9a9c89684a9b5e0b5a512160617766aa77c51db649a129ea7e273df709f</code><p>Ausgabe SHA-256</p><code>81c42c65b82b257e83a428d80e8b3d5e6d0fd5a0fb6358e32d5f9ba6da8b7a7c</code></details></td></tr><tr><td>b06</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;5f264873f715416757c4d49ca67212b8f2263ab9eb606cc95519073e450f7ab8&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;261da0f59c2e8fd9c1956d3b42d61c31d68eabb588a32aa05cb6b6d739b08b2e&quot;: &quot;accepted&quot;,
+    &quot;627ef571acfe1f47257ed3533f62c64739fb452c8e85c3e39294c6ba2e3bafaa&quot;: &quot;anchor_not_strict&quot;,
+    &quot;c1a0a19f844e6da070baa1d55644ab21ea9b5165e48af05ad3238e4449edf317&quot;: &quot;accepted&quot;,
+    &quot;c61c824c626b3e91b6f0db303fe153eb47004bdef1f10f440e7f359276fb519c&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;revocation&quot;,
+      &quot;sha256&quot;: &quot;c61c824c626b3e91b6f0db303fe153eb47004bdef1f10f440e7f359276fb519c&quot;
+    },
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;revocation_ack&quot;,
+      &quot;sha256&quot;: &quot;261da0f59c2e8fd9c1956d3b42d61c31d68eabb588a32aa05cb6b6d739b08b2e&quot;
+    },
+    {
+      &quot;height&quot;: 800004,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;c1a0a19f844e6da070baa1d55644ab21ea9b5165e48af05ad3238e4449edf317&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>fe6d88973a6ae65fddcef4172441d9a936a5af34be05120da464453faedcec9b</code><p>Ausgabe SHA-256</p><code>95f684705eda65b1d786d643af3a39ef756da7111943807dbd026127828a0018</code></details></td></tr><tr><td>b07</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;71df5147d8913da538542eb77e40c37100b5bb4914e3af7a1266d6d2df28bfc9&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;71df5147d8913da538542eb77e40c37100b5bb4914e3af7a1266d6d2df28bfc9&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>296dc2e7dfe5d8933f5a0ee15421d336aa0e2ae9e3789dbeb8ff926098011609</code><p>Ausgabe SHA-256</p><code>ca2c5895222e28f4202694b34cb6a232524d9be328cd2fae10fed57c7857db58</code></details></td></tr><tr><td>b08</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>f85571a116f6cd9c1ff24cf6614549062b47242c03a9b22ba004b1c3d49affbf</code><p>Ausgabe SHA-256</p><code>d00ade24651db4046801c3449636470847bf2aa86540f432179f09497be931dc</code></details></td></tr><tr><td>b09</td><td>nothing_to_settle</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;2015b651b5cf5da21a77ab8ba31a53a612bc0479498e5cb674b200890ed41776&quot;: &quot;inconsistent&quot;
+  },
+  &quot;event_set&quot;: [],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;nothing_to_settle&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>5c8cca749210d580066a2db0b63d27ffb48884cf06223504eb195f17ffa91d58</code><p>Ausgabe SHA-256</p><code>7ac6826c80b7ab795468bc983670f7fd0b5a947bda7262cb71cf612682efe172</code></details></td></tr><tr><td>b10</td><td>underspecified</td><td>undetermined</td><td>n/a</td><td>bond_malformed, parent_narrowing_failed</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;n/a&quot;,
+  &quot;contract_sha256&quot;: &quot;2efba8ed562cfbddb805d42003836250015890c2e583b1cd669fae1f9f568862&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;701f10858f514f806156c03bcfe617cbb59be7a6eb034d07cd0f4e49aaa9809d&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;701f10858f514f806156c03bcfe617cbb59be7a6eb034d07cd0f4e49aaa9809d&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;bond_malformed&quot;,
+    &quot;parent_narrowing_failed&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>473321b36d5f73168734bf494e3e90231556edfe324f74c2d51f6177bcb855b1</code><p>Ausgabe SHA-256</p><code>889b24a36743ad0092769ba19d52762bf0603e8a76179b915a688a86a795f6ca</code></details></td></tr><tr><td>b11</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;eb8659d134ef34c7c9853039ed730abab851d1a8263c739314f1f75a06f9637d&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;992d11345ea8af64df1247673c873d040b7c99f358da4257338e3bc0b5615742&quot;: &quot;revocation_not_provided_for&quot;,
+    &quot;a5caf03a82a5c4be2d4505b0a07277036331a00b9cbc5e6d5bc32e0a62cc7fdc&quot;: &quot;accepted&quot;,
+    &quot;b84d1eaefadb6a5737ecb61f7be537ed065a1f408b69d717e0b69a727728e62a&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;revocation_ack&quot;,
+      &quot;sha256&quot;: &quot;a5caf03a82a5c4be2d4505b0a07277036331a00b9cbc5e6d5bc32e0a62cc7fdc&quot;
+    },
+    {
+      &quot;height&quot;: 800004,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;b84d1eaefadb6a5737ecb61f7be537ed065a1f408b69d717e0b69a727728e62a&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>39254f5ab18bf068f6739ecf1c2f8603c9f587809bee3d5253a993548cbfbd58</code><p>Ausgabe SHA-256</p><code>7a52bfb315efea1b0d0e6ebebbbc083373ae9a5672b91e99bd7646a280a74ebc</code></details></td></tr><tr><td>b12</td><td>deviation</td><td>final</td><td>forfeited</td><td>after_expiry, prohibited</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;b2e1aeebed078d8ebbef36cde404f96e776878b6f99c50c93cfa28f262b3ba16&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;after_expiry&quot;,
+    &quot;prohibited&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;065a78aa3f39d3e65271b571ba64a4f5a599a427c6adc9c215e88d5ed9325a3c&quot;: &quot;accepted&quot;,
+    &quot;592adda3c35c8781366a410ea4cd0901523ec076b44dae3f10bebce294d203bc&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;592adda3c35c8781366a410ea4cd0901523ec076b44dae3f10bebce294d203bc&quot;
+    },
+    {
+      &quot;height&quot;: 800004,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;065a78aa3f39d3e65271b571ba64a4f5a599a427c6adc9c215e88d5ed9325a3c&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>b747cbb6e8f342c2e20119b19ab46ba3b3858f21564371b2887ab4c0ab3af1ee</code><p>Ausgabe SHA-256</p><code>318e56519e41712787991f2756feecabcb6744ce793aad685f58051ddb657ee4</code></details></td></tr><tr><td>b13</td><td>deviation</td><td>final</td><td>forfeited</td><td>conditional</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;b99773a35420022d001d167113e46f7dfcba20c2d2a71238a0a56ecc6c55da13&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;conditional&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;526a6387487cfbfddf97416e2c3e90768b8b30e3e5aeed7c5a81d2961d04d8cf&quot;: &quot;accepted&quot;,
+    &quot;846da3e42562b04873bb12bd3e8e56243a7943f40e713f7806da3a8b4e034c84&quot;: &quot;accepted&quot;,
+    &quot;bc6fe070de277b0fb2a955dc1fcd1ab0d76ffa598d70964cc958da3ec5a7d06a&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;bc6fe070de277b0fb2a955dc1fcd1ab0d76ffa598d70964cc958da3ec5a7d06a&quot;
+    },
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;526a6387487cfbfddf97416e2c3e90768b8b30e3e5aeed7c5a81d2961d04d8cf&quot;
+    },
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;846da3e42562b04873bb12bd3e8e56243a7943f40e713f7806da3a8b4e034c84&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>9877f645bccaa48d163136961a067cfecd98537bdd826a75937753c8fde3a856</code><p>Ausgabe SHA-256</p><code>1d83d24efd088300032bce99e398210f53b3e233e384f29ba1e4f1e149a08ed1</code></details></td></tr><tr><td>b14</td><td>deviation</td><td>provisional</td><td>pending_finality</td><td>prohibited</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;pending_finality&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;prohibited&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;c117b66a1c3f50cda14391adb339f7fff170d613d5f589316c84bc0c58c812cc&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;c117b66a1c3f50cda14391adb339f7fff170d613d5f589316c84bc0c58c812cc&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;provisional&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>2f7c76312fe30703cec513d046d7518a6cda22375a5df049bddd5e8e1fe787f8</code><p>Ausgabe SHA-256</p><code>aea0ad3b1e67165f2797b71906292ef4102d83e0c893eae1c918a7ba04c3851c</code></details></td></tr><tr><td>b15</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;f97d4a1e41d4cd4ebeb47dea25bd338e158c72a1a0646dfbb78ac660719c26d5&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;995541606a7b90e57ea02888723abca89e46627068c5c2d745720b2b5007f573&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;995541606a7b90e57ea02888723abca89e46627068c5c2d745720b2b5007f573&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>0a79e8af67e95ca94a8205df3d9178ec76808ac331c5cea6d4250f5385d28caa</code><p>Ausgabe SHA-256</p><code>c83ffa03f6532814ac751d7bca7be34ac8cd1193da2974212c5e26eb9ace0f83</code></details></td></tr><tr><td>b16</td><td>deviation</td><td>final</td><td>forfeited</td><td>prohibited</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;prohibited&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;bbec4fe93e54b73a617e5bb36ac7f735873337b10b0ed2a6d43fe7813e95f7ea&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;bbec4fe93e54b73a617e5bb36ac7f735873337b10b0ed2a6d43fe7813e95f7ea&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>27b072e9eb0d397531d4a47f9abc4cdde98703584df3fd89e90073c989e9e194</code><p>Ausgabe SHA-256</p><code>d1b9746526ab061f4b966b3f04699b227f0f2af3be1c858de56e44aa55bd9860</code></details></td></tr><tr><td>b17</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;5f264873f715416757c4d49ca67212b8f2263ab9eb606cc95519073e450f7ab8&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;35540a7f4c42f3955da51995e3c9987e8e104453bc27635554c86655f8d82b9d&quot;: &quot;rejected&quot;,
+    &quot;3677caa0c7585388b51c4d87856cb034e67cf9730bc4310df5abb1952613c1b8&quot;: &quot;accepted&quot;,
+    &quot;6174702cf308f07517dbb5493de78bc4d0ed3c700aa8c3dbbbf6c0dd5524a253&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;revocation_ack&quot;,
+      &quot;sha256&quot;: &quot;6174702cf308f07517dbb5493de78bc4d0ed3c700aa8c3dbbbf6c0dd5524a253&quot;
+    },
+    {
+      &quot;height&quot;: 800004,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;3677caa0c7585388b51c4d87856cb034e67cf9730bc4310df5abb1952613c1b8&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>37a6820bd25c8fb8dd31e5712317740c7b9d8ed16844c751fd1f519e09388604</code><p>Ausgabe SHA-256</p><code>ed610b3aeb8487eef621b6ee0e71f6aa54d0e6c11afb458b996976cecf036942</code></details></td></tr><tr><td>b18</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>a340ec1fe3825314d24cc655297b9dcad8082b02f805e71913d56e267bca0768</code><p>Ausgabe SHA-256</p><code>d00ade24651db4046801c3449636470847bf2aa86540f432179f09497be931dc</code></details></td></tr><tr><td>b19</td><td>underspecified</td><td>undetermined</td><td>undetermined</td><td>contract_not_verified</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;undetermined&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {},
+  &quot;event_set&quot;: [],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;contract_not_verified&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>4d2ad082e89121b93e29a30653522559360340daa9222d33df74f6ad9be345e6</code><p>Ausgabe SHA-256</p><code>1a8b54d7c7f53ff744f6535c475b467587e98d950e39db1ceb8b9201f581ec0f</code></details></td></tr><tr><td>b20</td><td>deviation</td><td>final</td><td>forfeited</td><td>revoked</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;revoked&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;9e93d8377ff02f631c8cfe025c61c8522a918deeab14a4ddcdce449101d3b7ae&quot;: &quot;accepted&quot;,
+    &quot;bc48c7351b670a370f539a49b73b541d8b96a28d2de939edaf82568d3481e70b&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;revocation&quot;,
+      &quot;sha256&quot;: &quot;bc48c7351b670a370f539a49b73b541d8b96a28d2de939edaf82568d3481e70b&quot;
+    },
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;9e93d8377ff02f631c8cfe025c61c8522a918deeab14a4ddcdce449101d3b7ae&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>11c2ab3de8f840f21552183a0a9748125a78c772a520b507c0987abfa11f9f77</code><p>Ausgabe SHA-256</p><code>1b27f4c995764bc0c98f3c4059d49e7f573c6f9fea69ada72214b3684315d80d</code></details></td></tr><tr><td>b21</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;b99773a35420022d001d167113e46f7dfcba20c2d2a71238a0a56ecc6c55da13&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;45f3cc100788e3f64469fc393c64ada9891accc1ea80257ead6b93d7122fbb08&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;45f3cc100788e3f64469fc393c64ada9891accc1ea80257ead6b93d7122fbb08&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>48fa7c47790f2aa0480a6574fc4b80cb3f7f5714d3a765c9ce62801bcdc06c49</code><p>Ausgabe SHA-256</p><code>f4e7497dfc39037ede1d79b41f8c9558f5c299ffc9c7626cfac98c61c640df04</code></details></td></tr><tr><td>b22</td><td>underspecified</td><td>undetermined</td><td>undetermined</td><td>record_not_strict</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;undetermined&quot;,
+  &quot;contract_sha256&quot;: &quot;b99773a35420022d001d167113e46f7dfcba20c2d2a71238a0a56ecc6c55da13&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;e5c2bb29fbcd7459b2b1b26bca8c2f99f758f0c9a9b51ceb3ecff3d080b942df&quot;: &quot;record_not_strict&quot;
+  },
+  &quot;event_set&quot;: [],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;record_not_strict&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>918e7346c3a83f314a2dbacf18e8663fada3dd4fc5e7aa8112ee6b468ec4da2f</code><p>Ausgabe SHA-256</p><code>2ad56c8aca6397b7a3c0cdef8bd189d2a43caa99b7fbb7954db5fbc0ba66b7e4</code></details></td></tr><tr><td>b23</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;2c9d38451d49bbc5f37a5a86f10a1fbe3bf8a380e66c5c0931ba2619145227a3&quot;: &quot;orphaned&quot;,
+    &quot;ffb3e330d9dbcfecff0c5e3d6b1f9c450f595af43e2a00ac03e94de8b6293dd0&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;ffb3e330d9dbcfecff0c5e3d6b1f9c450f595af43e2a00ac03e94de8b6293dd0&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>bb817a91f293ca6e966988d6d351771ceda5406f3a5d0b6213db2e235c1ea0c9</code><p>Ausgabe SHA-256</p><code>e8c149feb71ab922473436922497b87102cddc159c8de99de598da969b4eda23</code></details></td></tr><tr><td>b24</td><td>underspecified</td><td>undetermined</td><td>undetermined</td><td>parent_narrowing_failed</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;undetermined&quot;,
+  &quot;contract_sha256&quot;: &quot;5ffc5e0e6c0d8b61c0e1136daa2dd74b48dd8c7db61f1f2018f761e79bd3d0fd&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;3f966ea8a1fe7a42b23aa2827b3f344921f18e2db35ba83ba62b836e31c8abbe&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;3f966ea8a1fe7a42b23aa2827b3f344921f18e2db35ba83ba62b836e31c8abbe&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;parent_narrowing_failed&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>bdd65599cfe948173ab6d2db0fa02218ec83a5e1e6625a78ac219fa6ae3584f4</code><p>Ausgabe SHA-256</p><code>42d4932780c496877cf153e8dedd2af6e252e1fae5775f30ce0ef3928a806f55</code></details></td></tr><tr><td>b25</td><td>underspecified</td><td>undetermined</td><td>undetermined</td><td>key_conflict</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;undetermined&quot;,
+  &quot;contract_sha256&quot;: &quot;0b56eb36e9113844fd3b6cd4840cbc211dbf1831d4e09fe3cd67ae9dc9cb5acc&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {},
+  &quot;event_set&quot;: [],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;key_conflict&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>48ac50b7f5cb67d4bf854dfeff1497eb168ec3ed8ed04be7d1a2b48bfe8dcc14</code><p>Ausgabe SHA-256</p><code>09dcdf6d780ada0418665a899766230471bf54bd76b1b093b00733471f77b32d</code></details></td></tr><tr><td>b26</td><td>deviation</td><td>final</td><td>forfeited</td><td>nonconforming_record</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;nonconforming_record&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;00ed2858f063f244e921aac45cf1cfe5188ec8d672c5a77ab59892fa2091d671&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;00ed2858f063f244e921aac45cf1cfe5188ec8d672c5a77ab59892fa2091d671&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>fa8f21e2423978b07b329379d5f489a73ed628fbd1db8cdc68612d6f3e283446</code><p>Ausgabe SHA-256</p><code>077d9d8b4d05e746970bee8886b9795c78740b626b48657e405295fbf9f95554</code></details></td></tr><tr><td>b27</td><td>deviation</td><td>final</td><td>forfeited</td><td>revoked</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;1139c750466fb6a64d0740fe9bc9036d41030494a2b022d659a31337f837527b&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;revoked&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;4ce4c54a8d8c419c041e834c7fb6c6e6b4d7114cb254ce68215992f9ef602952&quot;: &quot;accepted&quot;,
+    &quot;6114b65b43b7b0f9063ddab628a85c3deaea872e9354d7b6144bcea321dbd95b&quot;: &quot;accepted&quot;,
+    &quot;61936a7c2970eae3bbc5995664ebeb5b4588b4a55bd0ab0ecd5ceca2ed1fb884&quot;: &quot;accepted&quot;,
+    &quot;6f771a0706cc9465fce4a09091d4fc731e87c45cfd45b26cf0b6b72930d70553&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;6f771a0706cc9465fce4a09091d4fc731e87c45cfd45b26cf0b6b72930d70553&quot;
+    },
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;revocation_ack&quot;,
+      &quot;sha256&quot;: &quot;61936a7c2970eae3bbc5995664ebeb5b4588b4a55bd0ab0ecd5ceca2ed1fb884&quot;
+    },
+    {
+      &quot;height&quot;: 800004,
+      &quot;kind&quot;: &quot;revocation&quot;,
+      &quot;sha256&quot;: &quot;4ce4c54a8d8c419c041e834c7fb6c6e6b4d7114cb254ce68215992f9ef602952&quot;
+    },
+    {
+      &quot;height&quot;: 800005,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;6114b65b43b7b0f9063ddab628a85c3deaea872e9354d7b6144bcea321dbd95b&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>ac9509f903db171233905ca710b8bdcf014ce24c835bdc2aedbfe23705e26917</code><p>Ausgabe SHA-256</p><code>f1eaeb521caff64c281f1eb895c7b9e59cf4dd7753751c913663f7cb39a13c68</code></details></td></tr><tr><td>b28</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;e0816babf33628039717e68d8cf8a0e289170e7cfc9d7aeaad8eb088b279f65b&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;579f0375da4a249d47159aa28e1142de7c0457096cd9bf19ad2ebcc64e2e0f6f&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;579f0375da4a249d47159aa28e1142de7c0457096cd9bf19ad2ebcc64e2e0f6f&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>3926fc081d1486c436dbed5c828022769761d30c3e7fea1ddd60e56289577a6f</code><p>Ausgabe SHA-256</p><code>99dbf43b544d86ed07c3f64c765630ad231be4f8bb2a711903c208980d9a58ec</code></details></td></tr><tr><td>b29</td><td>nothing_to_settle</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;e0816babf33628039717e68d8cf8a0e289170e7cfc9d7aeaad8eb088b279f65b&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;a912007d1e97c3bfd4619bc6f2d1ebca96b48a5e6fde690f7544b72146f780fa&quot;: &quot;rejected&quot;
+  },
+  &quot;event_set&quot;: [],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;nothing_to_settle&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>4c3cec22ebf7ed7d859adddd387f82367e8d49f4612de307e221fde2cc4cbbce</code><p>Ausgabe SHA-256</p><code>2f9064004d5164acd0d674c114d76a92ac4f6d9b209ee5ebaf7260315fe04538</code></details></td></tr><tr><td>b30</td><td>nothing_to_settle</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;e0816babf33628039717e68d8cf8a0e289170e7cfc9d7aeaad8eb088b279f65b&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;e91eb30a56238c46856a32653ecd9d66fa196c31d8f0c04ea66db2273de3f852&quot;: &quot;rejected&quot;
+  },
+  &quot;event_set&quot;: [],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;nothing_to_settle&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>2e1a98ea2f6ead0b1c343d784ce60f3f3b2f58651c3dbe5c70ecdd02fca52ac0</code><p>Ausgabe SHA-256</p><code>071d0419a689d174bd55cfae6d8dc1834479348abe683f6cc63f5e5215d171e4</code></details></td></tr><tr><td>b31</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;1139c750466fb6a64d0740fe9bc9036d41030494a2b022d659a31337f837527b&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;9750c63ac287513a0a64ed9c06161cace9e4e655730f8b9bbdba6c150494c0b9&quot;: &quot;accepted&quot;,
+    &quot;c97e9ad361b7bb33f595cc8ebabab7bf5ef321e559b2e1a993c22018b0fce522&quot;: &quot;ignored&quot;,
+    &quot;d1fc6ac68ed52024699d9b412db4d8f86899842f36cae486b27b7edfc003383a&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;revocation_ack&quot;,
+      &quot;sha256&quot;: &quot;d1fc6ac68ed52024699d9b412db4d8f86899842f36cae486b27b7edfc003383a&quot;
+    },
+    {
+      &quot;height&quot;: 800004,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;9750c63ac287513a0a64ed9c06161cace9e4e655730f8b9bbdba6c150494c0b9&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>5ae2de2debb46de9e4d90547b719fbb053b94a72264407d3f2af4442b0aa3af4</code><p>Ausgabe SHA-256</p><code>d380a0789ded76b94a6ac264cf27eeb670038b5d46fa742582b31a53f302fa15</code></details></td></tr><tr><td>b32</td><td>deviation</td><td>final</td><td>forfeited</td><td>prohibited</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;prohibited&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;d7130bf8ac6338b9fd0bcfed6a1c8034b66dfb736717557a08ff0d562b21bebd&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;d7130bf8ac6338b9fd0bcfed6a1c8034b66dfb736717557a08ff0d562b21bebd&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>16b1bbcac7ea3331b084b9e0af7ffef15a790dc1fe8a65bebdf9df02aa62908d</code><p>Ausgabe SHA-256</p><code>b97d83e74f7267ecf820b04d822ed686adf83ed6bb60a5d7d21766737097ec0f</code></details></td></tr><tr><td>b33</td><td>underspecified</td><td>undetermined</td><td>undetermined</td><td>parent_narrowing_failed</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;undetermined&quot;,
+  &quot;contract_sha256&quot;: &quot;7c5c9de1576a73ec13948e8a49ea1c706fafcc2baa1b7d1afcb7277d36b9d5bf&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;5aacac7fcbbcc08f3ba165783d32348ade6b44b901c8440335737136d2c0351c&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;5aacac7fcbbcc08f3ba165783d32348ade6b44b901c8440335737136d2c0351c&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;parent_narrowing_failed&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>bd522b3c2e93148f5d107a682de9568f838b506081d8495f6074d1a04f54475f</code><p>Ausgabe SHA-256</p><code>3392f5273f4dd8abed8001198dcd23f2648155f5e5baa9ca683d91bf2ffa916a</code></details></td></tr><tr><td>b34</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;6448087397cfb92907e7c721aa6d16e53517043d35634d8495d26335f7b72cce&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;6448087397cfb92907e7c721aa6d16e53517043d35634d8495d26335f7b72cce&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>3d47b3a2fb6301f9ab4073e3a69feb9bd719c60da9b0bba0a0cd7be5040783b8</code><p>Ausgabe SHA-256</p><code>58c72b2d2a884341e2b99851893ed4a5474d6775edda6798ccf85b79b1cec0e2</code></details></td></tr><tr><td>b35</td><td>deviation</td><td>final</td><td>forfeited</td><td>nonconforming_record</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;nonconforming_record&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;7fba30e318578fb42117cdbe0f19a68119faa900edfa59642a143ad418290286&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;7fba30e318578fb42117cdbe0f19a68119faa900edfa59642a143ad418290286&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>4de1278cc78796530f443b2543350f0a80b909a4c1370b71b4eecc13867a401e</code><p>Ausgabe SHA-256</p><code>78dc7fb44ce089d0a5dff26039f1f1783a0a042467953dcccbef68e50d799aa7</code></details></td></tr><tr><td>b36</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;e45fb99e3208260af2a7d7323adf945ce9cca4d6def2c9f5a7cf4ddc66c25aaf&quot;: &quot;record_not_strict&quot;,
+    &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>af684d92abead72479c7659a3d16198d28c87edd8156144ddd40192926a72bbe</code><p>Ausgabe SHA-256</p><code>e2216d0b1f2a7fa64df55fc2124b379a422f5b412baf0006aba92e9af95ce4d6</code></details></td></tr><tr><td>b37</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;e0be2c9aea241ca9d9f61374ed01540192830ab0ced3f0a573123929192f80b9&quot;: &quot;duplicate_dropped&quot;,
+    &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>d48de2dd53dbf5c8f5a7afb06fd16df2eedc612873a367a1c524403084b0aa97</code><p>Ausgabe SHA-256</p><code>719f36eb26a8cb0271d6aaffa9ee990eeb738a4168df932e35c2a9b9be9ef200</code></details></td></tr><tr><td>b38</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;b99773a35420022d001d167113e46f7dfcba20c2d2a71238a0a56ecc6c55da13&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;35188a2dcaa9259023302f8a797b29a11473d2a3e2717e00785abd1a0105d8bd&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;35188a2dcaa9259023302f8a797b29a11473d2a3e2717e00785abd1a0105d8bd&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>3c4bddc40f55736fea83c684f325acf526bf69317c5b7f7b36607c94f42c4e9d</code><p>Ausgabe SHA-256</p><code>3a1d25a84a2dd193444d06f8019909d43996bf3bcfb126ac9ec40151d0b26f81</code></details></td></tr><tr><td>b39</td><td>nothing_to_settle</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;804ffcec125ff96c0fecc8e8a8f5b795278b1fb92478b982a16a4cc4015ff2b5&quot;: &quot;signature_not_strict&quot;
+  },
+  &quot;event_set&quot;: [],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;nothing_to_settle&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>0ba776ffabac1eaa25ce5e0a4376974f123988e6df04d1d8e8d7cef653f0b08a</code><p>Ausgabe SHA-256</p><code>66322d42df2417cab8b2cd781a0e1e1da7495d06f9983657de003974d59e30b2</code></details></td></tr><tr><td>b40</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;0af340ad86cbf2470b5c667a9e2111b016ffdf73d6e4ce6d19e54d11f73f1f9f&quot;: &quot;ignored&quot;,
+    &quot;7779d990bdaffa8bfcdd89af0925aab1607cd23e1f313d0528ecdb77a0ece081&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;7779d990bdaffa8bfcdd89af0925aab1607cd23e1f313d0528ecdb77a0ece081&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>a17d526d936f6d50b14797484386190a73e7dffcbb0d336b57186e495bca928f</code><p>Ausgabe SHA-256</p><code>60c66e2a2a434afbf0c63d2900dff5ce6d17dc2496fe0bf7bb8bb1e0e4790620</code></details></td></tr><tr><td>b41</td><td>deviation</td><td>final</td><td>forfeited</td><td>delegation</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;4d68f942d15fc07e2db5ef0fb077ee7e05ca526a19a0928b2cbe2ed0dd6979a8&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;delegation&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;af5c688a680186f3244c506d42b2a925bc659df7eb503f06e12fcde6bc6760b2&quot;: &quot;accepted&quot;,
+    &quot;eca64adad0df733e8fb344497d39505732e6e9f54a958dd57041502bf74a7e80&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;af5c688a680186f3244c506d42b2a925bc659df7eb503f06e12fcde6bc6760b2&quot;
+    },
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;eca64adad0df733e8fb344497d39505732e6e9f54a958dd57041502bf74a7e80&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>2e30f3bbbd47ccd11fecf74dfe68d60a2e34e08e3ff844dd96cad3da9ab7aa75</code><p>Ausgabe SHA-256</p><code>7c7ed8defee47d22ba0de8f6a5a51384fb8be91bd75be8247240cb6fc2ac40ea</code></details></td></tr><tr><td>b42</td><td>deviation</td><td>final</td><td>forfeited</td><td>conditional</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;b99773a35420022d001d167113e46f7dfcba20c2d2a71238a0a56ecc6c55da13&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;conditional&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;5b1cd9bcb60afe4b63639f6a1c588883214932a52e896542e3ccb45cd62e364d&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;5b1cd9bcb60afe4b63639f6a1c588883214932a52e896542e3ccb45cd62e364d&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>bd93a17cb1150931622da22db78f3f048cf4b9ba3bca48ff82d6543d190c7b0d</code><p>Ausgabe SHA-256</p><code>23caeaa3a60b63e56ac0dbb3fc2dfa9d4e79c809dd74c0c69509ab985162772f</code></details></td></tr><tr><td>b43</td><td>underspecified</td><td>undetermined</td><td>undetermined</td><td>record_not_strict</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;undetermined&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;f4fbd9761883eee3a0c31b1bd844e7723593c4bb160ad919606191b3f5e07633&quot;: &quot;record_not_strict&quot;
+  },
+  &quot;event_set&quot;: [],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;record_not_strict&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>a43224fe89af6219b6ed26dfe553d6de571d24e24271a7d3d0789a4d905b52bc</code><p>Ausgabe SHA-256</p><code>399ee4ddaed728c462c6e161e5d694befb4768e3c4311f460d03342dc79ae089</code></details></td></tr><tr><td>b44</td><td>underspecified</td><td>undetermined</td><td>undetermined</td><td>parent_narrowing_failed</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;undetermined&quot;,
+  &quot;contract_sha256&quot;: &quot;7c5c9de1576a73ec13948e8a49ea1c706fafcc2baa1b7d1afcb7277d36b9d5bf&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;5aacac7fcbbcc08f3ba165783d32348ade6b44b901c8440335737136d2c0351c&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;5aacac7fcbbcc08f3ba165783d32348ade6b44b901c8440335737136d2c0351c&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;parent_narrowing_failed&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>8926325e2d173cb02d3593c540f885b442efd72d66d68bc14617dea44e5ff395</code><p>Ausgabe SHA-256</p><code>3392f5273f4dd8abed8001198dcd23f2648155f5e5baa9ca683d91bf2ffa916a</code></details></td></tr><tr><td>b45</td><td>deviation</td><td>final</td><td>forfeited</td><td>revoked</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;forfeited&quot;,
+  &quot;contract_sha256&quot;: &quot;1139c750466fb6a64d0740fe9bc9036d41030494a2b022d659a31337f837527b&quot;,
+  &quot;deviation_codes&quot;: [
+    &quot;revoked&quot;
+  ],
+  &quot;dispositions&quot;: {
+    &quot;061e1eab07f2258abf3686ebfbb19e486525949db952978850bd9253ecd60a31&quot;: &quot;accepted&quot;,
+    &quot;98e5a53d01ffa15c73224f6dd88d14bd35f90756bcd4cd6c5b5091d3e59f8d6b&quot;: &quot;accepted&quot;,
+    &quot;e00f95b3d721c4cd3fdf76cc04e9d573de92a9813fb15217ce8128820e15a305&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;revocation&quot;,
+      &quot;sha256&quot;: &quot;061e1eab07f2258abf3686ebfbb19e486525949db952978850bd9253ecd60a31&quot;
+    },
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;revocation_ack&quot;,
+      &quot;sha256&quot;: &quot;98e5a53d01ffa15c73224f6dd88d14bd35f90756bcd4cd6c5b5091d3e59f8d6b&quot;
+    },
+    {
+      &quot;height&quot;: 800003,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;e00f95b3d721c4cd3fdf76cc04e9d573de92a9813fb15217ce8128820e15a305&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;deviation&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>493f980af878ef207f820bd5609c91b2668aab2fb7ae30e2dd4b84671d7a1655</code><p>Ausgabe SHA-256</p><code>dce0256e917c64e79f9425698f0edeac6f846519138947731916c658e553efce</code></details></td></tr><tr><td>b46</td><td>nothing_to_settle</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;bf6ed2ff747d4ce9e67d450ab225d6a4b36db87c2d73f78dc0d43ac42e0340d3&quot;: &quot;record_not_strict&quot;
+  },
+  &quot;event_set&quot;: [],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;nothing_to_settle&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>3e2a5da0ba200680b87166edd6f52bacd0b504d78a1838d61f76ed32286a2079</code><p>Ausgabe SHA-256</p><code>ff69abfacbb325cf6545df9e91b495b3c0ea773ae3a84f978ca97ca0378fbc7f</code></details></td></tr><tr><td>b47</td><td>within_grant</td><td>final</td><td>held</td><td>—</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;held&quot;,
+  &quot;contract_sha256&quot;: &quot;06a87020a0133679ca8edfd1880817d87010ba0d6ffbb0cec0cf897fa3ccf49e&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;9659e4874ab59f3da484699b4f7dc545c0e7e3bc339ad1ab200e1588b2d99420&quot;: &quot;record_not_strict&quot;,
+    &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;f826fbcec35464fd936c88975bd0fe74efae0fc45a1813c654dab9e88084bff5&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;underspecified_reasons&quot;: [],
+  &quot;verdict&quot;: &quot;within_grant&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>256ae0ec747eb0490b150f51e2026b5396dd5ceda08a568ccbe1eeb7d2df6eaa</code><p>Ausgabe SHA-256</p><code>1a09c95c4175badb0c019f7ebc667b018f15c204a7a5f7f19228c9791544b919</code></details></td></tr><tr><td>b48</td><td>underspecified</td><td>undetermined</td><td>undetermined</td><td>parent_narrowing_failed</td><td><details><summary>8 Felder + Identität</summary><pre>{
+  &quot;bond_outcome&quot;: &quot;undetermined&quot;,
+  &quot;contract_sha256&quot;: &quot;03f66277f9d3dcfc37f4c753b79792435a859455988d709e6320f01544cb82c7&quot;,
+  &quot;deviation_codes&quot;: [],
+  &quot;dispositions&quot;: {
+    &quot;a73cca6ed6f7544926f49f7c17091e166f1f3caf4d56b7172a6039447ff2d541&quot;: &quot;accepted&quot;
+  },
+  &quot;event_set&quot;: [
+    {
+      &quot;height&quot;: 800002,
+      &quot;kind&quot;: &quot;execution&quot;,
+      &quot;sha256&quot;: &quot;a73cca6ed6f7544926f49f7c17091e166f1f3caf4d56b7172a6039447ff2d541&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;undetermined&quot;,
+  &quot;underspecified_reasons&quot;: [
+    &quot;parent_narrowing_failed&quot;
+  ],
+  &quot;verdict&quot;: &quot;underspecified&quot;
+}</pre><p>Eingabemanifest SHA-256</p><code>9a929d916d2b57089629699ee10b12363d2a7ae2db91e3abd725eb78d3cc84fe</code><p>Ausgabe SHA-256</p><code>7d6a8f9243a9dd72b4c84b6b7066f2c1533bc94f5ff1708a6b7db0ee51cae921</code></details></td></tr></tbody></table></div>
+<h2>Code, Eingabeidentitäten und Freeze</h2><p>Fixierter Spezifikations-Commit: <code>d7f5a91ed5565a4b1079f0e627d5d75eeb4a8367</code><br>Spezifikations-SHA-256: <code>3382374416254f85eec0c4f03699161748db5999794e75b68a00e7a4b7cf27c2</code><br>Veröffentlichtes Eingaberef: <code>f23867e0</code><br>SHA256SUMS-SHA-256: <code>afc5073730352c74dfc47da4ed8d3dbe32f112335a6933ce39ee47f92a244e54</code></p><p>Offizieller Ausgabe-Freeze-Digest, berechnet mit dem unveränderten <code>blind_compare.py freeze</code>:<br><code>c3b9cf8d88c22e95186aa1c2cff0bdbad54a98104e5a8936d42af1d0773c735b</code></p><p>Vollständiger eigener Commit und Tree stehen in <a href="FREEZE.json">FREEZE.json</a>. Das lokale Git-Bundle sichert diese Codeversion. Ein zweites Paketmanifest bindet Quellkopien, Ergebnisse, Protokolle, Freeze-Metadaten und Bundle. <code>python3 verify.py</code> prüft das Paket und wiederholt die Berechnung offline in einer temporären Kopie.</p><table><tr><th>Implementierungsdatei</th><th>SHA-256</th></tr><tr><td>impl/core.py</td><td><code>08da8ea994a5df7e826d660196053fde2eeed760686d6c8a2fab688af5863b98</code></td></tr><tr><td>requirements.txt</td><td><code>d66a7237051eab778196473c326b9418033501ee60b647b6f6194dd6c97f1772</code></td></tr><tr><td>run.py</td><td><code>da5ae2a53d5c09a8be444764bfd4346ffd6b71163e7d44479d126a42bd25544a</code></td></tr><tr><td>selftest.py</td><td><code>d592a0295deff2aad421070b8d545b3c8dba41d3aaf936821ace3838960d2530</code></td></tr><tr><td>verify.py</td><td><code>0307add5536e34382218992002d61344d2737f185a3106cd7b71119c410d39c7</code></td></tr></table><p>§§2–3: Parser, Kanonisierung, Hashes und Signaturen; §4: <code>door/terms/subset</code>; §5: <code>view_check</code>; §§6–9: Bindung, Triage, Belegpfade, Ereignismenge, Finalität; §§10–12: Grant, Genehmigungen, Widerruf und NENRIN. Python 3.12.14, cryptography 50.0.2, OpenSSL 4.0.3. Abhängigkeiten sind festgehalten, aber nicht als vollständige Laufzeitumgebung mitgeliefert.</p>
+<h2>Voraussetzungen für die Einreichung</h2><div class="scroll"><table><tr><th>Voraussetzung</th><th>Stand</th></tr><tr><td>Handle</td><td><code>arayun</code> über die verbundene GitHub-Identität ermittelt; nicht als Anmeldung abgesendet.</td></tr><tr><td>Track und Lesererklärung</td><td>Vorbereitet; Track-T-Methode mit offengelegter Vorbefassung. Einordnung durch Veranstalter bleibt offen.</td></tr><tr><td>48 Ergebnisdateien / offizieller Digest</td><td>Vorhanden; reproduziert.</td></tr><tr><td>Voller eigener Commit / Tree</td><td>In FREEZE.json und lokalem Git-Bundle.</td></tr><tr><td>Repository-URL</td><td>FEHLT. Lokal existiert ein Repository; kein externer Veröffentlichungsort wurde gewählt oder angelegt. Bis zur Öffnung darf es privat bleiben.</td></tr><tr><td>Unveränderter Freeze-Kommentar in Issue #60</td><td>NICHT ABGESENDET. SUBMISSION_DRAFT.txt ist ein konkreter Entwurf ohne Ausgaben; Repository-URL muss ergänzt werden.</td></tr><tr><td>Frist</td><td>20. November 2026, 23:59 UTC = 21. November 2026, 00:59 Uhr Schweiz. Heute ist 25. Oktober. Die Frist ist nach veröffentlichtem Stand noch offen.</td></tr><tr><td>Unabhängiger Freeze-Zeitnachweis</td><td>Noch nicht vorhanden. Ein lokaler Hash / Git-Datum ersetzt den timestamped Issue-Kommentar nicht. OTS ist für die Anmeldung optional.</td></tr><tr><td>Öffnung</td><td>Am 21. November: Salts/Sollwerte authentifizieren, Commitments prüfen, erst dann gegen exakt eingefrorene Ausgaben vergleichen und Abweichungen anhand Revision 0.8 beurteilen.</td></tr></table></div>
+<h2>Bedeutung für Executive AI Decision Review · CHF 300</h2><p>Eine unabhängig entwickelte Prüfung liefert zusätzliche Evidenz, wenn sie eine fixierte Regel aus einer getrennten Implementierung auf dieselben identifizierten Eingabebytes anwendet, ihre Quellen und Vorbefassung offenlegt, Ergebnisse vor Kenntnis der Sollwerte bindet und Abweichungen mit einer konkreten Regelbegründung prüfbar macht. Hier belegt das Paket eine zweite Operationalisierung und wiederholbare Ergebnisse; die formale Blindvergleichsleistung bleibt offen.</p><table><tr><th>Prüfhandlung</th><th>Zusätzliche Evidenz</th><th>Grenze</th></tr><tr><td>Bekannte Referenz erneut ausführen</td><td>Installierbarkeit und Reproduzierbarkeit genau dieses Programms auf diesen Bytes.</td><td>Kein unabhängiger Nachweis, dass das Programm die Spezifikation richtig abbildet; derselbe Fehler kann reproduziert werden.</td></tr><tr><td>Eigene Umsetzung nur gegen bekannte Sollwerte anpassen</td><td>Kompatibilität mit dem bekannten Korpus.</td><td>Übereinstimmung kann durch Anpassung an Antworten entstehen. Vorabkenntnis muss benannt werden.</td></tr><tr><td>Getrennte Umsetzung nach fixiertem Text, vor Sollwertöffnung eingefroren</td><td>Unabhängige Auslegbarkeit und auf neuen Fällen messbare Konformität, sobald die Öffnung verifiziert ist.</td><td>Gleiche Eingaben, Bibliotheken oder Spezifikationsfehler bleiben gemeinsame Abhängigkeiten; Übereinstimmung beweist keine reale Handlung.</td></tr><tr><td>Abweichung mit Regel, Gegenbeispiel und Trace aufklären</td><td>Lokalisierter Fehler oder dokumentierte Mehrdeutigkeit; auch ein Referenzfehler kann sichtbar werden.</td><td>Kein Gesamturteil über alle möglichen Eingaben oder über fachliche Richtigkeit der Ausgangsdaten.</td></tr></table><p>Für das CHF-300-Produkt sollte jeder Bericht ausdrücklich nennen: welche Entscheidung geprüft wurde, welche Dateien gebunden wurden, welche Regeln unabhängig implementiert oder nur erneut ausgeführt wurden, welche Gegenfälle tatsächlich liefen und welche Aussage das Ergebnis trägt. Ein belastbarer Leistungsbeleg wäre dieses Einfrierpaket plus später authentifizierte Öffnung und vollständiger Abweichungsbericht. Ein Referenz-Replay allein sollte als Referenz-Reproduktion bezeichnet werden.</p><p>Weder Signaturprüfung noch Blockheader oder zweimal gleiche Ausgabe beweisen die Wahrheit eines Records, die Vollständigkeit nicht protokollierter Handlungen, eine tatsächliche Zahlung, eine Vorabfreigabe oder die geschäftliche Richtigkeit einer KI-Entscheidung. Der aktuelle Befund betrifft synthetische Protokolldaten.</p>
+<h2>Originalquellen</h2><p><a href="https://github.com/ogasurfproject-jpg/horizon-shield/issues/60">Issue #60 einschließlich veröffentlichtem Fehlerhinweis</a><br><a href="https://github.com/ogasurfproject-jpg/horizon-shield/blob/f23867e0/workers/hs-ledger/nenrin/musubi-v0/settle-core-blind-01/README.md">Blind-01-Regeln am fixierten Ref</a><br><a href="https://github.com/ogasurfproject-jpg/horizon-shield/blob/d7f5a91ed5565a4b1079f0e627d5d75eeb4a8367/workers/hs-ledger/nenrin/musubi-v0/settle-core-v0/SETTLE_CORE_v0.md">Revision 0.8 am vollständigen Commit</a><br><a href="https://www.rfc-editor.org/rfc/rfc8032">RFC8032, allgemeine Kryptographiereferenz</a></p><footer>Eigene technische Auswertung · Status: lokal eingefroren, nicht eingereicht · Sollwertvergleich und externe Zeitbindung ausstehend. Die upstream OTS-Datei ist unverändert archiviert; ihr Bitcoin-Zeitnachweis wurde in diesem Lauf nicht validiert.</footer></main></html>

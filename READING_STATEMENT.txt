@@ -1,0 +1,39 @@
+Intended method: Track T, with explicitly disclosed prior exposure.
+This is NOT a claim of an uncontaminated clean room or unrestricted blindness.
+
+This run's implementer read:
+- User prompt, including the known unscoped_approvals_refused reference bug.
+- Pinned SETTLE_CORE_v0.md revision 0.8 at full commit
+  d7f5a91ed5565a4b1079f0e627d5d75eeb4a8367, with verified SHA-256.
+  Notes and reference filenames mentioned inside this allowed text were seen;
+  their referenced contents were not fetched.
+- blind-01 README.md, SHA256SUMS, COMMITMENT.txt, blind_compare.py,
+  blind_commit.py, and all 178 input files at the published ref f23867e0.
+- Issue #60 and its operator comment describing the already known bug.
+  Issue commentary is additional to the narrow Track T folder/text allowlist.
+- General RFC8032 reference, including its test-1 key/signature and point
+  arithmetic. General language/crypto knowledge and installed crypto APIs.
+- A filtered retrieval of prior work: earlier assistant reports describe
+  MUSUBI reference-verifier/settlement reproductions on Oct 20 and Oct 22.
+  Exact earlier code-file exposure cannot be reconstructed from this record.
+  Prior reference outputs/knowledge may affect reasoning; independence from
+  every previous conversation is not asserted.
+
+Not fetched, read or executed in this run:
+NOTES.md; gen_vectors.py; run_reference.py; exercise_inputs.py; EXERCISE.txt;
+any public expected.json or vectors.json; the MUSUBI reference implementation;
+any other settle-core implementation; the blind generator/seed or salts;
+the 48 withheld expected outputs; later spec revision 0.9.
+Public-vector inputs were permitted but not used either.
+
+Organizer blind_compare.py and blind_commit.py were read as expressly permitted
+blind-01 utilities; neither computes settlement. Only our impl/core.py does.
+No third-party settler was called to generate, tune or validate outputs.
+The known bug was tested using our own generated signatures/contracts, with
+the expected gate behavior derived from sections 4.1 and 4.2. This demonstrates
+textual derivability, not independent first discovery of an unknown bug.
+
+Provenance retrieval cannot certify all historical access or model training
+exposure. Track categorization/acceptance belongs to the organizer. The proper
+description is "Track T method, prior exposure disclosed", not unqualified
+"blind Track T conformance". Formal agreement with withheld answers is pending.

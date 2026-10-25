@@ -1,0 +1,26 @@
+{
+  "refused_door": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "29269d242c2cc03dec216351efb333539a04ea7fcaa78e569505338c9acf4a8f",
+    "deviation_codes": [],
+    "dispositions": {},
+    "event_set": [],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "contract_not_verified"
+    ],
+    "verdict": "underspecified"
+  },
+  "valid_door": {
+    "bond_outcome": "undetermined",
+    "contract_sha256": "29269d242c2cc03dec216351efb333539a04ea7fcaa78e569505338c9acf4a8f",
+    "deviation_codes": [],
+    "dispositions": {},
+    "event_set": [],
+    "status": "undetermined",
+    "underspecified_reasons": [
+      "unscoped_approvals_refused"
+    ],
+    "verdict": "underspecified"
+  }
+}

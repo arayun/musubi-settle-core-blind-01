@@ -1,0 +1,30 @@
+{
+  "issue": {
+    "url": "https://github.com/ogasurfproject-jpg/horizon-shield/issues/60",
+    "title": "settle core v0: held-out set blind-01, 48 inputs, answers committed, opening 2026-11-21",
+    "issue_number": 60,
+    "body": "blind-01 is 48 new inputs for MUSUBI settle core v0 whose expected outputs are withheld. It tests the text: does an implementation written from `SETTLE_CORE_v0.md` alone get the reference's eight core fields on inputs nobody has seen answers for? The procedure is the one aeoess proposed in piiiico/agent-errata#16.\n\nFolder: `workers/hs-ledger/nenrin/musubi-v0/settle-core-blind-01/` at f23867e0. Its README has the full rules.\n\n**Published now**\n- `inputs/b01` to `inputs/b48`, laid out like `settle-core-v0/vectors/` without `expected.json`, and `SHA256SUMS`.\n- `COMMITMENT.txt`: one salted sha256 per answer and a root (root `4966f39ba2fbda18651139d37285f819dbda49a07e81ad3328cda136d3da67e1`), with an OpenTimestamps proof.\n- `blind_compare.py` (freeze digest, and the comparison at opening) and `blind_commit.py` (checks the opening).\n- The pinned text: `SETTLE_CORE_v0.md` revision 0.8, commit d7f5a91e, sha256 33823744...27c2.\n\n**Withheld until 2026-11-21**\nThe expected core fields, the salts, the generator and its seed, and the list of what each input tests.\n\n**Rules**\n- Track T: read only the pinned text, the blind-01 folder, the inputs (not the outputs) of the 128 public vectors and general references. Not NOTES.md, gen_vectors.py, run_reference.py, any expected.json or vectors.json, the reference code, or another implementation.\n- Track V: Track T plus the 128 public vectors with their expected outputs. Still not NOTES.md, the reference code or another implementation.\n- Anything that writes your code is shown only what your track allows. If you have read more before, say so; you can still take part.\n- Freeze before 2026-11-20 23:59 UTC with one comment here: handle, track, repository, full commit and tree hash, the digest from `blind_compare.py freeze`, runtime, and what you read. Outputs stay unpublished until opening. The opening date does not move earlier.\n\n**Results**\nFor each implementation: its track and reading statement, how many of the 48 agree on all eight core fields, and every disagreement with both values. Each disagreement is judged against the text. If the reference is wrong, that is reported the same way. If the text allows both readings, that is a finding and the text is revised. Answers committed now are not changed after opening.\n\nCredit by handle in the results and in NOTES.md. Nobody is paid.\n\nQuestions about the rules go here. Questions about the text go in a separate issue, as section 15 of the text says, and are answered after the opening so that the answer does not reach only one participant.\n",
+    "state": "open",
+    "user": {
+      "login": "ogasurfproject-jpg",
+      "name": "ogasurfproject-jpg",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/245396182?v=4",
+      "id": 245396182
+    },
+    "assignees": null,
+    "labels": null,
+    "milestone": null,
+    "state_reason": null,
+    "comments": 1,
+    "created_at": "2026-10-23T01:07:14Z",
+    "updated_at": "2026-10-23T03:20:29Z",
+    "closed_at": null,
+    "display_url": "https://github.com/ogasurfproject-jpg/horizon-shield/issues/60",
+    "display_title": "settle core v0: held-out set blind-01, 48 inputs, answers committed, opening 2026-11-21"
+  },
+  "url": "https://github.com/ogasurfproject-jpg/horizon-shield/issues/60",
+  "title": "settle core v0: held-out set blind-01, 48 inputs, answers committed, opening 2026-11-21",
+  "display_url": "https://github.com/ogasurfproject-jpg/horizon-shield/issues/60",
+  "display_title": "settle core v0: held-out set blind-01, 48 inputs, answers committed, opening 2026-11-21"
+}

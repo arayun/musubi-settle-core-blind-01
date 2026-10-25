@@ -1,0 +1,11 @@
+{
+  "implementation_files": {
+    "impl/core.py": "08da8ea994a5df7e826d660196053fde2eeed760686d6c8a2fab688af5863b98",
+    "requirements.txt": "d66a7237051eab778196473c326b9418033501ee60b647b6f6194dd6c97f1772",
+    "run.py": "da5ae2a53d5c09a8be444764bfd4346ffd6b71163e7d44479d126a42bd25544a",
+    "selftest.py": "d592a0295deff2aad421070b8d545b3c8dba41d3aaf936821ace3838960d2530",
+    "verify.py": "0307add5536e34382218992002d61344d2737f185a3106cd7b71119c410d39c7"
+  },
+  "organizer_utilities": "Input check and freeze/open comparison only; not a settler",
+  "settlement_entrypoint": "impl.core.settle"
+}
